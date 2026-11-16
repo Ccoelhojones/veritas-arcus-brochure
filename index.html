@@ -1,0 +1,169 @@
+<title>Veritas Arcus</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap">
+
+<style>
+:root {
+  --navy:   #1c2331;
+  --ivory:  #fffdf5;
+  --gold:   #b8972e;
+  --smoke:  #e8e4da;
+  --muted:  #8a8678;
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'Inter', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --navy: #1c2331; --ivory: #fffdf5; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --navy: #1c2331; --ivory: #fffdf5; color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: var(--ff-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left:  max(16px, env(safe-area-inset-left,  0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100%;
+}
+
+.page {
+  width: 100%;
+  max-width: 680px;
+  background: var(--ivory);
+  color: var(--navy);
+  position: relative;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.45);
+}
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--gold);
+}
+
+.header { padding: 2.75rem 2.75rem 2rem 3.25rem; border-bottom: 1px solid var(--smoke); }
+.wordmark { display: flex; flex-direction: column; gap: 0.15rem; margin-bottom: 1.5rem; }
+.wordmark-company { font-family: var(--ff-body); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.wordmark-product { font-family: var(--ff-display); font-size: 2.6rem; font-weight: 600; line-height: 1; letter-spacing: 0.01em; color: var(--navy); }
+.tagline { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 400; font-style: italic; color: var(--muted); letter-spacing: 0.01em; }
+
+.problem-solution { padding: 2rem 2.75rem 2rem 3.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; border-bottom: 1px solid var(--smoke); }
+.ps-label { font-family: var(--ff-body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.ps-text { font-family: var(--ff-display); font-size: 1rem; font-weight: 500; line-height: 1.55; color: var(--navy); }
+
+.pillars { padding: 2rem 2.75rem 2rem 3.25rem; border-bottom: 1px solid var(--smoke); }
+.pillars-heading { font-family: var(--ff-body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.pillar-list { display: flex; flex-direction: column; gap: 1rem; }
+.pillar { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; align-items: start; }
+.pillar-marker { width: 1.25rem; height: 1.25rem; background: var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+.pillar-marker svg { width: 0.6rem; height: 0.6rem; fill: var(--ivory); }
+.pillar-title { font-family: var(--ff-body); font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+.pillar-body { font-family: var(--ff-body); font-size: 0.8rem; font-weight: 300; color: #4a4a4c; line-height: 1.55; }
+
+.pilot { background: var(--navy); color: var(--ivory); padding: 1.75rem 2.75rem 1.75rem 3.25rem; border-bottom: 1px solid var(--smoke); }
+.pilot-eyebrow { font-family: var(--ff-body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.pilot-headline { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600; line-height: 1.3; color: var(--ivory); margin-bottom: 0.6rem; text-wrap: balance; }
+.pilot-body { font-family: var(--ff-body); font-size: 0.8rem; font-weight: 300; color: #c8c4ba; line-height: 1.6; }
+
+.footer { padding: 1.5rem 2.75rem 1.75rem 3.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.contact-name { font-family: var(--ff-display); font-size: 1rem; font-weight: 600; color: var(--navy); }
+.contact-role { font-family: var(--ff-body); font-size: 0.72rem; font-weight: 400; color: var(--muted); margin-bottom: 0.4rem; }
+.contact-details { display: flex; flex-direction: column; gap: 0.15rem; }
+.contact-line { font-family: var(--ff-body); font-size: 0.75rem; font-weight: 400; color: var(--navy); }
+.contact-line span { color: var(--gold); font-weight: 500; margin-right: 0.4rem; }
+.legal { font-family: var(--ff-body); font-size: 0.6rem; font-weight: 300; color: var(--muted); text-align: right; line-height: 1.5; }
+
+@media print { body { background: white; padding: 0; } .page { box-shadow: none; max-width: 100%; } }
+@media (max-width: 540px) {
+  .header, .pillars, .pilot { padding: 1.5rem 1.5rem 1.5rem 2rem; }
+  .problem-solution { grid-template-columns: 1fr; padding: 1.5rem 1.5rem 1.5rem 2rem; }
+  .footer { padding: 1.25rem 1.5rem 1.5rem 2rem; }
+  .wordmark-product { font-size: 2rem; }
+  .legal { text-align: left; }
+}
+</style>
+
+<div class="page">
+  <header class="header">
+    <div class="wordmark">
+      <span class="wordmark-company">Veritas Nexum</span>
+      <span class="wordmark-product">Veritas Arcus</span>
+    </div>
+    <p class="tagline">Institutional-grade fundamental analysis — for every client conversation, portfolio decision, and company deep dive.</p>
+  </header>
+
+  <section class="problem-solution">
+    <div class="ps-block">
+      <div class="ps-label">The Problem</div>
+      <p class="ps-text">Every client conversation, new position, or company in the news means hours spent wading through raw financial statements, fragmented data feeds, and manual spreadsheets.</p>
+    </div>
+    <div class="ps-block">
+      <div class="ps-label">The Solution</div>
+      <p class="ps-text">Arcus gives you clean, audit-ready fundamentals on any company — instantly. Whether you're preparing for a client meeting, researching a position, or answering a call on the spot.</p>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillars-heading">Why Compliance-Conscious Practices Choose Arcus</div>
+    <div class="pillar-list">
+      <div class="pillar">
+        <div class="pillar-marker"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#fffdf5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="pillar-title">100% Deterministic Engine</div>
+          <div class="pillar-body">No AI hallucinations, no speculative price forecasts, no black-box predictions. Pure, verifiable fundamental analysis derived directly from historical financial statements.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-marker"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#fffdf5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="pillar-title">Audit-Ready Clarity</div>
+          <div class="pillar-body">Converts ten years of trailing data into plain-language trajectories covering profitability, balance sheet leverage, free cash flow quality, and dividend track record.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-marker"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#fffdf5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="pillar-title">Instant Review Preparation</div>
+          <div class="pillar-body">Enter any ticker — GSK.L, ULVR.L, AAPL — and generate a client-ready research brief. Single-company deep dives and head-to-head comparisons, side by side.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-marker"><svg viewBox="0 0 10 10"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#fffdf5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="pillar-title">Your Deployment, Your Data</div>
+          <div class="pillar-body">Each practice receives a private, dedicated environment. No shared infrastructure, no cross-contamination of client data between firms.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pilot">
+    <div class="pilot-eyebrow">Experience Veritas Arcus</div>
+    <p class="pilot-headline">We invite boutique advisory practices to schedule a live executive demonstration.</p>
+    <p class="pilot-body">See how Arcus transforms client review preparation in a session built around your practice. Selected firms may request a private, tailored evaluation using their own watchlist.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="contact-block">
+      <div class="contact-name">Christina Jones</div>
+      <div class="contact-role">Founder, Veritas Nexum Ltd</div>
+      <div class="contact-details">
+        <div class="contact-line"><span>E</span>christina@veritasnexum.co.uk</div>
+        <div class="contact-line"><span>W</span>veritasnexum.com</div>
+      </div>
+    </div>
+    <div class="legal">
+      Veritas Nexum Ltd — Registered in England &amp; Wales<br>
+      No financial advice is provided. All analysis is factual and historical.
+    </div>
+  </footer>
+</div>
