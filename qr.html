@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veritas Arcus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+:root {
+  --navy:  #1c2331;
+  --ivory: #fffdf5;
+  --gold:  #b8972e;
+  --smoke: #e8e4da;
+  --muted: #8a8678;
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'Inter', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; } }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--navy);
+  color: var(--ivory);
+  font-family: var(--ff-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2.5rem;
+}
+
+.card {
+  background: var(--ivory);
+  color: var(--navy);
+  width: 100%;
+  max-width: 340px;
+  padding: 2.25rem 2rem 2rem;
+  position: relative;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--gold);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-align: center;
+}
+.wordmark-company {
+  font-family: var(--ff-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.wordmark-product {
+  font-family: var(--ff-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.qr-wrapper {
+  background: white;
+  padding: 0.75rem;
+  border: 1px solid var(--smoke);
+}
+#qrcode canvas, #qrcode img { display: block; }
+
+.divider { width: 2rem; height: 1px; background: var(--gold); }
+
+.instruction {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+.url {
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="wordmark">
+    <span class="wordmark-company">Veritas Nexum</span>
+    <span class="wordmark-product">Veritas Arcus</span>
+  </div>
+  <div class="qr-wrapper">
+    <div id="qrcode"></div>
+  </div>
+  <div class="divider"></div>
+  <p class="instruction">Scan to view the Veritas Arcus overview</p>
+  <p class="url">arcus.veritasnexum.com</p>
+</div>
+
+<script>
+  new QRCode(document.getElementById('qrcode'), {
+    text: 'https://arcus.veritasnexum.com',
+    width: 220,
+    height: 220,
+    colorDark: '#1c2331',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
+</body>
+</html>
